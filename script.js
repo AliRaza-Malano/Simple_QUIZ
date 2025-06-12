@@ -1,4 +1,3 @@
-// const { createElement } = require("react");
 window.onload = function () {
     let namefocus = document.getElementById("name").focus();
 };
@@ -58,7 +57,7 @@ function next() {
         return;
     }
     const mainContainer = document.querySelector(".container");
-    mainContainer.innerHTML = ""; // 💡 This clears previous question
+    mainContainer.innerHTML = ""; // This clears previous question
 
     const divv = document.createElement("div")
     divv.classList.add("myquestion");
@@ -102,7 +101,7 @@ function pre() {
     } else {
         for (i; i < questions.length; i--) {
             const mainContainer = document.querySelector(".container");
-            mainContainer.innerHTML = ""; // 💡 This clears previous question
+            mainContainer.innerHTML = ""; // This clears previous question
             const divv = document.createElement("div")
             divv.classList.add("myquestion");
             divv.innerHTML = questions[i];
@@ -149,12 +148,27 @@ function results() {
     }
     let percentage = (obtainedMarks / totalMarks) * 100;
     let myname = document.getElementById("name").value;
-    
+    let rating = "Pass";
+    let grade;
+    if (percentage >= 90) {
+        grade = "A+";
+    } else if (percentage >= 80) {
+        grade = "A";
+    }else if (percentage >= 70) {
+        grade = "B";
+    }else if (percentage >= 50) {
+        grade = "C";
+    }else if (percentage < 50) {
+        grade = "D";
+        rating = "Fail"
+    }
     // Store data in localStorage
     localStorage.setItem("name", myname);
     localStorage.setItem("total", totalMarks);
     localStorage.setItem("obtained", obtainedMarks);
     localStorage.setItem("percentage", percentage.toFixed(2));
+    localStorage.setItem("grade",grade);
+    localStorage.setItem("rating", rating);
 
     // Redirect to result page
     window.location.href = "result.html";
@@ -166,44 +180,3 @@ function closeCustomAlert() {
     document.getElementById("customAlert").style.display = "none";
     document.getElementById("name").focus();
 }
-//-------------------------------------- My Original Code -------------------------------------------------
-// var i = -1;
-// function next() {
-//     i++;
-//     if (i == questions.length) {
-//         window.location.href = "result.html"
-//     } else {
-//         for (i; i < questions.length; i++) {
-
-//             const mainContainer = document.querySelector(".container");
-//             mainContainer.innerHTML = ""; // 💡 This clears previous question
-
-//             const divv = document.createElement("div")
-//             divv.classList.add("myquestion");
-//             divv.innerHTML = questions[i];
-
-//             mainContainer.append(divv)
-//             mainContainer.innerHTML += `<ul>
-//             <li><input type="radio" name="Q${i}" value="${options[i][0]}"> A) ${options[i][0]}<br></li>
-//             <li><input type="radio" name="Q${i}" value="${options[i][1]}"> B) ${options[i][1]}<br></li>
-//             <li><input type="radio" name="Q${i}" value="${options[i][2]}"> C) ${options[i][2]}<br></li>
-//             <li><input type="radio" name="Q${i}" value="${options[i][3]}"> D) ${options[i][3]}<br></li>
-//             </ul>`;
-
-//             const radios = document.querySelectorAll(`input[name="Q${i}"]`);
-//             let selectedValue = null;
-//             for (const radio of radios) {
-//                 selectedValue = radio.value
-//                 break;
-//             }
-//             userAnswer[i] = selectedValue;
-//             alert(userAnswer[i]);
-
-//             break;
-//         }
-//     }
-//     window.scrollTo({
-//         top: document.body.scrollHeight,
-//         behavior: 'smooth'
-//     });
-// }

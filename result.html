@@ -31,11 +31,11 @@
             </div>
             <div class="fieldd">
                 <label for="name">Grade : </label>
-                <input type="text" name="name" value="A" readonly>
+                <input type="text" id="grade" name="name" readonly>
             </div>
             <div class="fieldd">
                 <label for="name">Rating : </label>
-                <input type="text" name="name" value="Pass" readonly>
+                <input type="text" id="rating" name="name"  readonly>
             </div>
         </div>
         <button><a href="index.html" style="text-decoration: none; color: rgb(255, 255, 255);">Go Back</a></button>
@@ -45,11 +45,16 @@
                 const total1 = localStorage.getItem("total");
                 const obtained = localStorage.getItem("obtained");
                 const percentage = localStorage.getItem("percentage");
+                const grade = localStorage.getItem("grade");
+                const rating = localStorage.getItem("rating");
 
                 document.getElementById("name").value = name;
                 document.getElementById("totalmarks").value = total1;
                 document.getElementById("obtained").value = obtained;
                 document.getElementById("percentage").value = percentage + "%";
+                document.getElementById("grade").value = grade;
+                document.getElementById("rating").value = rating;
+
     </script>
 </body>
 
