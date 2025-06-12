@@ -5,7 +5,7 @@ A simple and interactive Quiz App built using HTML, CSS, and JavaScript. This pr
 ## 🛠️ Features
 
 - Interactive multiple-choice questions
-- Real-time feedback on answers
+- quick answer
 - Score tracking
 - Responsive design for mobile and desktop
 
