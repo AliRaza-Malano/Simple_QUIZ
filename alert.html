@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #customAlert {
+            /* display: none; */
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            background: #fff;
+            /* border: 2px solid #333; */
+            padding: 20px;
+            box-shadow: 0 0 11px #464646;
+            z-index: 9999;
+            width: 300px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        #customAlert button {
+            box-shadow: 0 0 2px #464646;
+            border: 1px soid rgb(157, 157, 157);
+            margin-top: 10px;
+            outline: none;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="showCustomAlert()">Show Custom Alert</button>
+
+    <div id="customAlert">
+        <p>Please! type your name before start.</p>
+        <button onclick="closeCustomAlert()">OK</button>
+    </div>
+
+    <script>
+        function showCustomAlert() {
+            document.getElementById("customAlert").style.display = "block";
+        }
+
+        function closeCustomAlert() {
+            document.getElementById("customAlert").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

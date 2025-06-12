@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resultstyle.css">
+</head>
+
+<body>
+    <main>
+
+        <h1>Congratulations</h1>
+        <div class="resultCard">
+            <div class="fieldd">
+                <label class="mylbl" for="name">Name : </label>
+                <input id="name" type="text" name="name" value="Name" readonly>
+            </div>
+            <div class="fieldd">
+                <label for="name">Total Marks : </label>
+                <input id="totalmarks" type="text" name="name" value="Name" readonly>
+            </div>
+            <div class="fieldd">
+                <label for="name">Obtained Marks : </label>
+                <input id="obtained" type="text" name="name" value="Name" readonly>
+            </div>
+            <div class="fieldd">
+                <label for="name">Percentage : </label>
+                <input id="percentage" type="text" name="name" value="Name" readonly>
+            </div>
+            <div class="fieldd">
+                <label for="name">Grade : </label>
+                <input type="text" name="name" value="A" readonly>
+            </div>
+            <div class="fieldd">
+                <label for="name">Rating : </label>
+                <input type="text" name="name" value="Pass" readonly>
+            </div>
+        </div>
+        <button><a href="index.html" style="text-decoration: none; color: rgb(255, 255, 255);">Go Back</a></button>
+    </main>
+    <script>
+                const name = localStorage.getItem("name");
+                const total1 = localStorage.getItem("total");
+                const obtained = localStorage.getItem("obtained");
+                const percentage = localStorage.getItem("percentage");
+
+                document.getElementById("name").value = name;
+                document.getElementById("totalmarks").value = total1;
+                document.getElementById("obtained").value = obtained;
+                document.getElementById("percentage").value = percentage + "%";
+    </script>
+</body>
+
+</html>
